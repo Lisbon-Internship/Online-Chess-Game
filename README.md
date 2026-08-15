@@ -32,8 +32,10 @@ Since this game uses purely local web technologies and does not rely on any exte
 - `js/assets.js`: Contains inline SVG code for all the high-quality chess piece graphics.
 
 ## Screenshots
+![image1](doc/screen1.png)
+![image3](doc/screen3.png)
+![image2](doc/screen2.png)
 
-*(Screenshots can be added here once the game is running)*
 
 ## Author
-Developed as part of the Lisbon Internship project.
+Developed as part of the Lisbon Internship project. 2026
