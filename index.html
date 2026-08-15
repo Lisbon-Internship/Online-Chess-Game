@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Online Chess</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Chess Online</h1>
+        </header>
+
+        <main class="game-container">
+            <!-- Left panel: captures, player info -->
+            <div class="panel side-panel left-panel">
+                <div class="player-info top-player">
+                    <div class="player-name">Black</div>
+                    <div class="captured-pieces" id="black-captures"></div>
+                </div>
+                
+                <div class="game-status-wrapper">
+                    <div class="turn-indicator" id="turn-indicator">White's Turn</div>
+                    <div class="game-status" id="game-status">In Progress</div>
+                    <button class="btn btn-primary" id="restart-btn">Restart Game</button>
+                </div>
+
+                <div class="player-info bottom-player">
+                    <div class="player-name">White</div>
+                    <div class="captured-pieces" id="white-captures"></div>
+                </div>
+            </div>
+
+            <!-- Center: board -->
+            <div class="board-container">
+                <div class="board-wrapper">
+                    <div class="coordinates top">
+                        <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+                    </div>
+                    <div class="board-middle">
+                        <div class="coordinates left">
+                            <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+                        </div>
+                        <div id="chessboard" class="chessboard"></div>
+                        <div class="coordinates right">
+                            <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+                        </div>
+                    </div>
+                    <div class="coordinates bottom">
+                        <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right panel: move history -->
+            <div class="panel side-panel right-panel">
+                <div class="panel-header">
+                    <h2>Move History</h2>
+                </div>
+                <div class="move-history-container" id="move-history">
+                    <table class="move-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>White</th>
+                                <th>Black</th>
+                            </tr>
+                        </thead>
+                        <tbody id="move-list">
+                            <!-- Moves will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="promotion-modal" style="display: none;">
+        <div class="modal">
+            <h2>Pawn Promotion</h2>
+            <div class="promotion-options" id="promotion-options">
+                <!-- Promotion options injected here -->
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="game-over-modal" style="display: none;">
+        <div class="modal">
+            <h2 id="game-over-title">Checkmate!</h2>
+            <p id="game-over-message">White wins.</p>
+            <button class="btn btn-primary" id="modal-restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/assets.js"></script>
+    <script src="js/chess.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
